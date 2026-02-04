@@ -122,10 +122,6 @@ with st.container():
 # -------------------------------------------------
 st.markdown("### 🧠 Surrogate Model Selection")
 
-model_name = st.selectbox(
-    "Select AI Model",
-    list(models.keys())
-)
 
 # -------------------------------------------------
 # PREDICTION
