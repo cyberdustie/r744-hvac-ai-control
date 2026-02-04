@@ -69,7 +69,6 @@ div[data-testid="stNumberInput"] input {
 # -------------------------------------------------
 # Load Model & Scaler
 # -------------------------------------------------
-
 models = joblib.load("all_models.pkl")
 scaler = joblib.load("scaler.pkl")
 
@@ -121,15 +120,12 @@ with st.container():
 # -------------------------------------------------
 # MODEL SELECTION
 # -------------------------------------------------
-st.markdown("## 🤖 Model Selection")
+st.markdown("### 🧠 Surrogate Model Selection")
 
 model_name = st.selectbox(
     "Select AI Model",
-    options=list(models.keys())
+    list(models.keys())
 )
-
-model = models[model_name]
-
 
 # -------------------------------------------------
 # PREDICTION
@@ -145,6 +141,7 @@ if st.button("🚀 Predict Optimal Operating Pressure"):
     }])
 
     input_scaled = scaler.transform(input_df)
+    model = models[model_name]
 
     prediction = model.predict(input_scaled)[0]
 
