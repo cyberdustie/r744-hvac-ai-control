@@ -120,7 +120,7 @@ with st.container():
 # -------------------------------------------------
 # MODEL SELECTION
 # -------------------------------------------------
-st.markdown("### 🧠 Surrogate Model Selection")
+st.markdown("###  Surrogate Model Selection")
 
 model_name = st.selectbox(
     "Select AI Model",
@@ -130,7 +130,7 @@ model_name = st.selectbox(
 # -------------------------------------------------
 # PREDICTION
 # -------------------------------------------------
-if st.button("🚀 Predict Optimal Operating Pressure"):
+if st.button(" Predict Optimal Operating Pressure"):
 
     input_df = pd.DataFrame([{
         "DBT": dbt,
@@ -145,7 +145,7 @@ if st.button("🚀 Predict Optimal Operating Pressure"):
 
     prediction = model.predict(input_scaled)[0]
 
-    st.markdown("### ✅ Prediction Result")
+    st.markdown("###  Prediction Result")
     st.success(
         f"**Optimal Gas Cooler Operating Pressure:**  \n"
         f"### {prediction:.2f} bar"
