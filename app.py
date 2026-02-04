@@ -69,7 +69,7 @@ div[data-testid="stNumberInput"] input {
 # -------------------------------------------------
 # Load Model & Scaler
 # -------------------------------------------------
-models = joblib.load("all_models.pkl")
+model = joblib.load("best_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
 # -------------------------------------------------
@@ -141,7 +141,6 @@ if st.button("🚀 Predict Optimal Operating Pressure"):
     }])
 
     input_scaled = scaler.transform(input_df)
-    model = models[model_name]
 
     prediction = model.predict(input_scaled)[0]
 
