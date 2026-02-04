@@ -69,7 +69,8 @@ div[data-testid="stNumberInput"] input {
 # -------------------------------------------------
 # Load Model & Scaler
 # -------------------------------------------------
-model = joblib.load("best_model.pkl")
+
+models = joblib.load("all_models.pkl")
 scaler = joblib.load("scaler.pkl")
 
 # -------------------------------------------------
@@ -120,7 +121,14 @@ with st.container():
 # -------------------------------------------------
 # MODEL SELECTION
 # -------------------------------------------------
-st.markdown("### 🧠 Surrogate Model Selection")
+st.markdown("## 🤖 Model Selection")
+
+model_name = st.selectbox(
+    "Select AI Model",
+    options=list(models.keys())
+)
+
+model = models[model_name]
 
 
 # -------------------------------------------------
